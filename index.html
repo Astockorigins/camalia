@@ -92,6 +92,77 @@
             background: #245c39;
         }
 
+        /* ADDED: Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #245c39;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ADDED: Mobile Menu Styles */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid #e8eee9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-menu a {
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-weight: 600;
+            color: #34453a;
+        }
+
+        .mobile-menu a:hover {
+            background: #eef6ef;
+            color: #2e7d4a;
+        }
+
+        .mobile-menu .cart-link {
+            color: white !important;
+            background: #2e7d4a;
+            text-align: center;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
         /* HERO */
         .hero {
             min-height: 650px;
@@ -372,11 +443,12 @@
 
         /* MOBILE */
         @media (max-width: 900px) {
-            nav {
-                gap: 12px;
+            /* ADDED: Show hamburger, hide desktop nav */
+            .hamburger {
+                display: flex;
             }
 
-            nav a:not(.cart-link) {
+            nav {
                 display: none;
             }
 
@@ -460,6 +532,15 @@
             <a href="index.html" class="logo">
                 <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg" alt="Camalia Enterprise Ltd Logo">
             </a>
+            
+            <!-- ADDED: Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- DESKTOP NAVIGATION -->
             <nav>
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
@@ -468,6 +549,16 @@
                 <a href="#contact">Contact</a>
                 <a href="tel:+254722734905" class="cart-link">📞 Call Now</a>
             </nav>
+        </div>
+
+        <!-- ADDED: Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+254722734905" class="cart-link">📞 Call Now</a>
         </div>
     </header>
 
@@ -758,6 +849,25 @@
     </footer>
 
     <script>
+        // ADDED: Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            // Toggle active class on hamburger
+            this.classList.toggle('active');
+            // Toggle active class on mobile menu
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -766,22 +876,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Mobile menu toggle
-        const nav = document.querySelector('.header nav');
-        const header = document.querySelector('.header');
-
-        header.addEventListener('click', function(e) {
-            if (window.innerWidth < 900) {
-                // Toggle navigation visibility on mobile
-                const links = nav.querySelectorAll('a');
-                links.forEach(link => {
-                    if (!link.classList.contains('cart-link')) {
-                        link.style.display = link.style.display === 'none' ? 'inline' : 'none';
-                    }
-                });
-            }
         });
     </script>
 </body>
