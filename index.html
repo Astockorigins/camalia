@@ -653,6 +653,124 @@
                 font-size: 32px;
             }
         }
+
+        /* =========================================
+           MASCOT POPUP
+        ========================================= */
+        
+        .mascot-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none; /* Hidden by default */
+            align-items: flex-end;
+            gap: 15px;
+            max-width: 350px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .mascot-popup.show {
+            display: flex;
+        }
+
+        .mascot-bubble {
+            background: white;
+            border: 2px solid #245c39;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            flex: 1;
+        }
+
+        .mascot-bubble h3 {
+            color: #245c39;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .mascot-bubble p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Speech bubble arrow pointing to mascot */
+        .mascot-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: -15px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent #245c39;
+        }
+
+        .mascot-img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mascot-btn {
+            display: inline-block;
+            background: #245c39;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mascot-btn:hover {
+            background: #8bc34a;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .mascot-popup {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: 100%;
+                flex-direction: column-reverse;
+                align-items: flex-end;
+            }
+
+            .mascot-img {
+                width: 80px;
+            }
+
+            .mascot-bubble {
+                width: 100%;
+            }
+
+            .mascot-bubble::after {
+                display: none; /* Hide arrow on mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -1054,6 +1172,19 @@
         </div>
     </footer>
 
+    <!-- =========================================
+         MASCOT POPUP
+    ========================================= -->
+    <div id="camalia-mascot-popup" class="mascot-popup">
+        <div class="mascot-bubble">
+            <h3>🚧 Site Under Upgrades!</h3>
+            <p>Hello! 👋 I'm the Camalia mascot. Our main site is currently undergoing some major upgrades. We are rolling out brand new features soon!</p>
+            <p style="font-size: 14px; margin-top: 10px;">In the meantime, feel free to explore our current services and recent projects.</p>
+            <button id="close-mascot-popup" class="mascot-btn">Continue to Site ➜</button>
+        </div>
+        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/mascot/ChatGPT%20Image%20Aug%2026,%202026,%2011_03_23%20PM.png" alt="Camalia Mascot" class="mascot-img">
+    </div>
+
     <script>
         // ADDED: Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
@@ -1082,6 +1213,26 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // MASCOT POPUP LOGIC
+        const mascotPopup = document.getElementById('camalia-mascot-popup');
+        const closeMascotBtn = document.getElementById('close-mascot-popup');
+
+        // Show popup after 2 seconds (only if not dismissed in this session)
+        window.addEventListener('load', function() {
+            // Check if user has dismissed it in this session
+            if (!sessionStorage.getItem('camaliaPopupDismissed')) {
+                setTimeout(() => {
+                    mascotPopup.classList.add('show');
+                }, 2000); // 2-second delay
+            }
+        });
+
+        // Close popup and remember for this session
+        closeMascotBtn.addEventListener('click', function() {
+            mascotPopup.classList.remove('show');
+            sessionStorage.setItem('camaliaPopupDismissed', 'true');
         });
     </script>
 </body>
