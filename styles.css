@@ -1,0 +1,476 @@
+/* =========================================
+   CAMALIA ENTERPRISE - MAIN STYLESHEET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #24352a;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e8eee9;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #245c39;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #34453a;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2e7d4a;
+}
+
+.cart-link {
+    background: #2e7d4a;
+    color: white !important;
+    padding: 10px 16px;
+    border-radius: 25px;
+}
+
+.cart-link:hover {
+    background: #245c39;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 48, 27, 0.86),
+            rgba(15, 48, 27, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+}
+
+.hero-small,
+.section-small {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #b8e0bd;
+}
+
+.hero p {
+    max-width: 550px;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #245c39;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services {
+    padding: 90px 0;
+    background: #f6faf7;
+}
+
+.services h2,
+.projects h2,
+.about h2,
+.contact h2 {
+    font-size: 38px;
+    margin-bottom: 45px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #e7eee9;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(36, 92, 57, 0.10);
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    color: #718078;
+    font-size: 14px;
+}
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects {
+    padding: 100px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.view-all {
+    color: #2e7d4a;
+    font-weight: 700;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    border: 1px solid #e5ebe6;
+    border-radius: 18px;
+    overflow: hidden;
+    background: white;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.project-image {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef6ef;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 22px;
+}
+
+.category-name {
+    color: #6e8876;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-info h3 {
+    font-size: 22px;
+    margin: 7px 0;
+}
+
+.project-description {
+    font-size: 14px;
+    color: #718078;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+    padding: 90px 0;
+    background: #eef6ef;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about h2 {
+    margin-bottom: 0;
+}
+
+.about-content > p {
+    font-size: 18px;
+    color: #56665c;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    padding: 100px 20px;
+    text-align: center;
+    background: #245c39;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 42px;
+    max-width: 700px;
+    margin: 0 auto 15px;
+}
+
+.cta p {
+    margin-bottom: 30px;
+    color: #dcebdd;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+}
+
+.contact > .container > p:not(.section-small) {
+    max-width: 650px;
+    margin: auto;
+    color: #6d796f;
+}
+
+.contact-details {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.contact-details p {
+    font-weight: 600;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #17251c;
+    color: white;
+    padding: 45px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-content h3 {
+    margin-bottom: 5px;
+}
+
+.footer-content p {
+    color: #b9c5bc;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+    nav {
+        gap: 12px;
+    }
+
+    nav a:not(.cart-link) {
+        display: none;
+    }
+
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .services,
+    .projects,
+    .about,
+    .contact {
+        padding: 65px 0;
+    }
+
+    .services h2,
+    .projects h2,
+    .about h2,
+    .contact h2 {
+        font-size: 31px;
+    }
+
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .project-image {
+        height: 230px;
+    }
+
+    .cta h2 {
+        font-size: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
