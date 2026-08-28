@@ -6,6 +6,16 @@
     <title>Camalia Enterprise Ltd | Landscaping & Garden Design</title>
     <meta name="description" content="Professional landscaping, garden design and maintenance services in Nairobi, Kenya.">
     
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2e7d4a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Camalia">
+    <link rel="apple-touch-icon" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href='data:application/manifest+json,{"name":"Camalia Enterprise Ltd","short_name":"Camalia","start_url":".","display":"standalone","background_color":"#ffffff","theme_color":"#2e7d4a","icons":[{"src":"https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg","sizes":"192x192","type":"image/jpeg"},{"src":"https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg","sizes":"512x512","type":"image/jpeg"}]}'>
+
     <!-- Importing a modern font (Inter) similar to DeepSeek -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -287,61 +297,149 @@
             object-fit: cover;
         }
 
-        /* SERVICES */
+        /* =========================================
+           SERVICES SECTION (COURSERA AD STYLE)
+        ========================================= */
         .services {
-            padding: 90px 0;
-            background: white;
+            padding: 60px 0;
+            background-color: var(--ds-accent); /* GREEN Background */
+            
+            /* ADDED: Wire-mesh grid background */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            
+            /* FIXED: Prevents horizontal overflow */
+            overflow: hidden;
+            
+            color: white;
         }
 
-        .services h2,
-        .projects h2,
-        .about h2,
-        .contact h2 {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 45px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .service-card {
-            background: var(--ds-card-bg);
-            padding: 30px;
-            border-radius: 12px;
+        .services-ad-container {
+            max-width: 1000px;
+            margin: 0 auto;
             text-align: center;
-            border: 1px solid var(--ds-border);
-            box-shadow: var(--ds-card-shadow);
+            /* FIXED: Prevents horizontal overflow on mobile */
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .services-ad-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        /* Flex layout for image + capsules on large screens */
+        .services-flex-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .services-ad-image-wrapper {
+            position: relative;
+            max-width: 450px;
+            flex-shrink: 0;
+            margin: 0;
+            /* FIXED: Prevents image wrapper from overflowing */
+            width: 100%;
+        }
+
+        .services-ad-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            display: block;
+        }
+
+        .services-ad-badge {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .services-ad-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .services-ad-badge-1 {
+            top: 10%;
+            right: -20px;
+            transform: rotate(-10deg);
+        }
+
+        .services-ad-badge-2 {
+            bottom: 20%;
+            left: -30px;
+            transform: rotate(-5deg);
+        }
+
+        /* Services titles list - CHANGED TO BLUE */
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            flex: 1;
+            /* FIXED: Prevents capsules from overflowing */
+            width: 100%;
+            min-width: 0;
+        }
+
+        .services-list li {
+            background: #3b82f6; /* CHANGED: Beautiful Blue */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            /* FIXED: Allows text to wrap if needed */
+            word-break: break-word;
+        }
+
+        .services-ad-btn {
+            background: white;
+            color: var(--ds-accent);
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
             transition: 0.3s;
         }
 
-        .service-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 12px 30px rgba(46, 125, 74, 0.10);
+        .services-ad-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
         }
 
-        .service-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 8px;
-            font-size: 20px;
-        }
-
-        .service-card p {
-            color: #777;
-            font-size: 14px;
-        }
-
-        /* PROJECTS */
+        /* PROJECTS - ADDED WIRE MESH BACKGROUND */
         .projects {
             padding: 100px 0;
-            background: var(--ds-bg);
+            background-color: var(--ds-bg);
+            /* ADDED: Wire-mesh grid background */
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         .section-heading {
@@ -426,10 +524,15 @@
             margin-bottom: 20px;
         }
 
-        /* ABOUT */
+        /* ABOUT - ADDED WIRE MESH BACKGROUND */
         .about {
             padding: 90px 0;
-            background: white;
+            background-color: white;
+            /* ADDED: Wire-mesh grid background */
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
             position: relative;
         }
 
@@ -590,11 +693,16 @@
             background: #f0f0f0;
         }
 
-        /* CONTACT */
+        /* CONTACT - ADDED WIRE MESH BACKGROUND */
         .contact {
             padding: 90px 0;
             text-align: center;
-            background: white;
+            background-color: white;
+            /* ADDED: Wire-mesh grid background */
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         .contact h2 {
@@ -629,10 +737,10 @@
             color: white;
         }
 
-        /* FOOTER */
+        /* FOOTER - CHANGED TO BEAUTIFUL GREEN */
         footer {
-            background: var(--ds-text);
-            color: #ccc;
+            background: #2e7d4a; /* CHANGED: Beautiful Green */
+            color: #ffffff;
             padding: 45px 0;
         }
 
@@ -645,11 +753,11 @@
 
         .footer-content h3 {
             margin-bottom: 5px;
-            color: white;
+            color: #ffffff;
         }
 
         .footer-content p {
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* MASCOT POPUP */
@@ -742,6 +850,34 @@
             }
         }
 
+        /* PWA INSTALL BUTTON */
+        .install-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--ds-accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: none;
+            transition: 0.3s;
+        }
+
+        .install-btn:hover {
+            background: var(--ds-accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .install-btn.show {
+            display: block;
+        }
+
         /* MOBILE - RESTORED ORIGINAL RESPONSIVENESS */
         @media (max-width: 900px) {
             .hamburger {
@@ -752,7 +888,6 @@
                 display: none;
             }
 
-            .services-grid,
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -767,6 +902,30 @@
 
             .hero-img {
                 height: 300px;
+            }
+
+            /* Stack image above capsules on smaller devices */
+            .services-flex-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .services-ad-image-wrapper {
+                max-width: 100%;
+            }
+
+            /* FIXED: Badges stay inside the image on mobile */
+            .services-ad-badge-1 {
+                right: 0;
+            }
+
+            .services-ad-badge-2 {
+                left: 0;
+            }
+
+            .services-list {
+                width: 100%;
+                max-width: 500px;
             }
         }
 
@@ -789,21 +948,38 @@
                 font-size: 16px;
             }
 
-            .services,
+            .services {
+                padding: 40px 0;
+            }
+
+            .services-ad-title {
+                font-size: 32px;
+            }
+
+            /* 2 columns, 2 rows for capsules on small devices */
+            .services-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                max-width: 100%;
+            }
+
+            .services-list li {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
             .projects,
             .about,
             .contact {
                 padding: 65px 0;
             }
 
-            .services h2,
             .projects h2,
             .about h2,
             .contact h2 {
                 font-size: 31px;
             }
 
-            .services-grid,
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -859,6 +1035,13 @@
 
             .mascot-bubble::after {
                 display: none;
+            }
+
+            .install-btn {
+                bottom: 70px;
+                left: 10px;
+                padding: 10px 15px;
+                font-size: 13px;
             }
         }
     </style>
@@ -918,32 +1101,51 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- =========================================
+         SERVICES SECTION (COURSERA AD STYLE)
+    ========================================= -->
     <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
-                    <h3>Landscaping</h3>
-                    <p>Complete garden rehabilitation, clearing, digging, leveling, and planting of grass, ground covers, and assorted shrubs.</p>
+        <div class="services-ad-container">
+            <h2 class="services-ad-title">Our Services</h2>
+            
+            <!-- Flex row for image + capsules on large screens -->
+            <div class="services-flex-row">
+                <div class="services-ad-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Beautiful Modern Office" class="services-ad-image">
+                    
+                    <!-- Badge 1 -->
+                    <div class="services-ad-badge services-ad-badge-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Professional
+                    </div>
+
+                    <!-- Badge 2 -->
+                    <div class="services-ad-badge services-ad-badge-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Quality Guaranteed
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🌳</div>
-                    <h3>Garden Design</h3>
-                    <p>Supply and planting of premium plants including Golden Palms, Travelli Palms, Italian Trees, and Highbreed Bottle Trees.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌺</div>
-                    <h3>Maintenance</h3>
-                    <p>Regular pruning, organic manure application, and ongoing care to keep your garden vibrant and healthy.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Plant Supply</h3>
-                    <p>Supply and planting of Pemba grass, ground covers, assorted shrubs, and organic manure for optimal growth.</p>
-                </div>
+
+                <!-- Services titles list (8 items - 2 columns) - BLUE CAPSULES -->
+                <ul class="services-list">
+                    <li>Landscaping</li>
+                    <li>Garden Design</li>
+                    <li>Maintenance</li>
+                    <li>Plant Supply</li>
+                    <li>Hardscaping</li>
+                    <li>Softscaping</li>
+                    <li>Swimming Pools</li>
+                    <li>Cabro Paving</li>
+                </ul>
             </div>
+
+            <a href="#contact" class="services-ad-btn">Get a Quote →</a>
         </div>
     </section>
 
@@ -1278,13 +1480,16 @@
         <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/mascot/ChatGPT%20Image%20Aug%2026,%202026,%2011_03_23%20PM.png" alt="Camalia Mascot" class="mascot-img">
     </div>
 
+    <!-- PWA INSTALL BUTTON -->
+    <button id="install-btn" class="install-btn">📲 Install App</button>
+
     <script>
         // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
 
         hamburger.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent the click from bubbling to document
+            event.stopPropagation();
             this.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
@@ -1297,7 +1502,7 @@
             });
         });
 
-        // ADDED: Close mobile menu when clicking anywhere on the screen
+        // Close mobile menu when clicking anywhere on the screen
         document.addEventListener('click', function(event) {
             if (mobileMenu.classList.contains('active') && !mobileMenu.contains(event.target) && event.target !== hamburger) {
                 hamburger.classList.remove('active');
@@ -1331,6 +1536,81 @@
             mascotPopup.classList.remove('show');
             sessionStorage.setItem('camaliaPopupDismissed', 'true');
         });
+
+        // =========================================
+        // PWA INSTALL APP LOGIC
+        // =========================================
+        
+        let deferredPrompt = null;
+        const installBtn = document.getElementById('install-btn');
+
+        // Listen for the beforeinstallprompt event
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.classList.add('show');
+        });
+
+        // Hide the button if already installed or running standalone
+        window.addEventListener('appinstalled', () => {
+            installBtn.classList.remove('show');
+            deferredPrompt = null;
+        });
+
+        // Check if already running in standalone mode
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            installBtn.classList.remove('show');
+        }
+
+        // Check iOS devices (need to add to home screen manually)
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        if (isIOS && !window.matchMedia('(display-mode: standalone)').matches) {
+            installBtn.classList.add('show');
+            installBtn.textContent = '📲 Add to Home Screen';
+        }
+
+        // Click handler for install button
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installBtn.classList.remove('show');
+                }
+                deferredPrompt = null;
+            } else if (isIOS) {
+                // iOS fallback - show instructions
+                alert('Tap the Share icon (□↑) in Safari, then tap "Add to Home Screen" to install the Camalia app.');
+            }
+        });
+
+        // Register Service Worker for offline caching
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                const swCode = `
+                    const CACHE_NAME = 'camalia-v1';
+                    const urlsToCache = ['/'];
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.addAll(urlsToCache))
+                        );
+                    });
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => response || fetch(event.request))
+                        );
+                    });
+                `;
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                navigator.serviceWorker.register(swUrl)
+                    .catch(() => {
+                        // Service worker registration is optional, ignore errors
+                    });
+            });
+        }
     </script>
 </body>
 </html>
