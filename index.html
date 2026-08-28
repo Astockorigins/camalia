@@ -6,9 +6,12 @@
     <title>Camalia Enterprise Ltd | Landscaping & Garden Design</title>
     <meta name="description" content="Professional landscaping, garden design and maintenance services in Nairobi, Kenya.">
     
+    <!-- Importing a modern font (Inter) similar to DeepSeek -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         /* =========================================
-           CAMALIA ENTERPRISE - MAIN STYLESHEET
+           DEEPSEEK STYLE STYLESHEET (GREEN THEME)
         ========================================= */
         
         * {
@@ -17,14 +20,21 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            /* DeepSeek Color Palette - CHANGED TO GREEN */
+            --ds-bg: #f8f9fa; 
+            --ds-text: #1a1a2e; 
+            --ds-accent: #2e7d4a; /* Green */
+            --ds-accent-hover: #245c39; /* Darker Green */
+            --ds-card-bg: #ffffff;
+            --ds-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --ds-border: #e5e7eb;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #24352a;
-            background: #ffffff;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ds-bg);
+            color: var(--ds-text);
             line-height: 1.6;
         }
 
@@ -39,18 +49,18 @@
             margin: auto;
         }
 
-        /* HEADER */
+        /* HEADER - Clean and minimal */
         .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--ds-border);
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid #e8eee9;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav {
-            min-height: 75px;
+            min-height: 60px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -58,7 +68,7 @@
         }
 
         .logo img {
-            height: 70px;
+            height: 50px;
             width: auto;
             display: block;
             object-fit: contain;
@@ -72,35 +82,48 @@
 
         nav a {
             font-size: 15px;
-            font-weight: 600;
-            color: #34453a;
-            transition: 0.3s;
+            font-weight: 500;
+            color: #555;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #2e7d4a;
+            color: var(--ds-accent);
         }
 
         .cart-link {
-            background: #2e7d4a;
+            background: var(--ds-accent);
             color: white !important;
             padding: 10px 16px;
-            border-radius: 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
         }
 
         .cart-link:hover {
-            background: #245c39;
+            background: var(--ds-accent-hover);
         }
 
-        /* ADDED: Hamburger Menu Styles */
+        /* Hamburger Menu - FIXED: No background/box, only icon color changes */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
-            background: none;
-            border: none;
+            background: transparent !important;
+            border: none !important;
             padding: 10px;
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hamburger:focus,
+        .hamburger:active,
+        .hamburger:focus-visible {
+            outline: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
         }
 
         .hamburger span {
@@ -114,25 +137,31 @@
 
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
+            background: #2e7d4a;
         }
 
         .hamburger.active span:nth-child(2) {
             opacity: 0;
+            background: #2e7d4a;
         }
 
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
+            background: #2e7d4a;
         }
 
-        /* ADDED: Mobile Menu Styles */
+        .hamburger:hover span {
+            background: #2e7d4a;
+        }
+
         .mobile-menu {
             display: none;
             position: absolute;
-            top: 75px;
+            top: 60px;
             left: 0;
             right: 0;
             background: white;
-            border-bottom: 1px solid #e8eee9;
+            border-bottom: 1px solid var(--ds-border);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             padding: 20px;
             flex-direction: column;
@@ -144,18 +173,18 @@
             text-align: center;
             border-radius: 8px;
             transition: 0.3s;
-            font-weight: 600;
-            color: #34453a;
+            font-weight: 500;
+            color: #555;
         }
 
         .mobile-menu a:hover {
-            background: #eef6ef;
-            color: #2e7d4a;
+            background: #f4f6ff;
+            color: var(--ds-accent);
         }
 
         .mobile-menu .cart-link {
             color: white !important;
-            background: #2e7d4a;
+            background: var(--ds-accent);
             text-align: center;
         }
 
@@ -163,72 +192,105 @@
             display: flex;
         }
 
-        /* HERO */
+        /* HERO - The "DeepSeek" look */
         .hero {
-            min-height: 650px;
+            min-height: auto;
             display: flex;
             align-items: center;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(15, 48, 27, 0.86),
-                    rgba(15, 48, 27, 0.35)
-                ),
-                url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
+            
+            /* Wire-mesh grid background */
+            background-color: #f8f9fa;
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            
+            padding: 20px 0;
+            
+            /* FIXED: Added scroll-margin-top to account for sticky header */
+            scroll-margin-top: 60px;
         }
 
         .hero-content {
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            color: white;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
         }
 
-        .hero-small,
-        .section-small {
+        .hero-text {
+            color: var(--ds-text);
+        }
+
+        .hero-small {
             font-size: 13px;
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 15px;
+            color: var(--ds-accent);
         }
 
         .hero h1 {
             font-size: clamp(45px, 7vw, 82px);
             line-height: 1.05;
             margin-bottom: 25px;
+            font-weight: 700;
         }
 
         .hero h1 span {
-            color: #b8e0bd;
+            color: var(--ds-accent);
         }
 
-        .hero p {
+        .hero-text p {
             max-width: 550px;
             font-size: 18px;
             margin-bottom: 35px;
+            color: #666;
         }
 
         .btn {
             display: inline-block;
-            background: #ffffff;
-            color: #245c39;
+            background: var(--ds-accent);
+            color: white;
             padding: 14px 28px;
-            border-radius: 30px;
-            font-weight: 700;
+            border-radius: 8px;
+            font-weight: 600;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .btn:hover {
+            background: var(--ds-accent-hover);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero-img {
+            background: var(--ds-card-bg);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: var(--ds-card-shadow);
+            border: 1px solid var(--ds-border);
+            overflow: hidden;
+            height: 450px;
+            width: 100%;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* SERVICES */
         .services {
             padding: 90px 0;
-            background: #f6faf7;
+            background: white;
         }
 
         .services h2,
@@ -236,6 +298,7 @@
         .about h2,
         .contact h2 {
             font-size: 38px;
+            font-weight: 700;
             margin-bottom: 45px;
         }
 
@@ -246,17 +309,18 @@
         }
 
         .service-card {
-            background: white;
+            background: var(--ds-card-bg);
             padding: 30px;
-            border-radius: 18px;
+            border-radius: 12px;
             text-align: center;
-            border: 1px solid #e7eee9;
+            border: 1px solid var(--ds-border);
+            box-shadow: var(--ds-card-shadow);
             transition: 0.3s;
         }
 
         .service-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 12px 30px rgba(36, 92, 57, 0.10);
+            box-shadow: 0 12px 30px rgba(46, 125, 74, 0.10);
         }
 
         .service-icon {
@@ -266,16 +330,18 @@
 
         .service-card h3 {
             margin-bottom: 8px;
+            font-size: 20px;
         }
 
         .service-card p {
-            color: #718078;
+            color: #777;
             font-size: 14px;
         }
 
         /* PROJECTS */
         .projects {
             padding: 100px 0;
+            background: var(--ds-bg);
         }
 
         .section-heading {
@@ -289,8 +355,16 @@
             margin-bottom: 0;
         }
 
+        .section-small {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--ds-accent);
+        }
+
         .view-all {
-            color: #2e7d4a;
+            color: var(--ds-accent);
             font-weight: 700;
         }
 
@@ -301,10 +375,11 @@
         }
 
         .project-card {
-            border: 1px solid #e5ebe6;
-            border-radius: 18px;
+            border: 1px solid var(--ds-border);
+            border-radius: 12px;
             overflow: hidden;
             background: white;
+            box-shadow: var(--ds-card-shadow);
             transition: 0.3s;
         }
 
@@ -318,7 +393,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #eef6ef;
+            background: #f4f6ff;
             overflow: hidden;
         }
 
@@ -333,40 +408,29 @@
         }
 
         .category-name {
-            color: #6e8876;
+            color: #777;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .project-info h3 {
-            font-size: 22px;
+            font-size: 20px;
             margin: 7px 0;
+            font-weight: 600;
         }
 
         .project-description {
             font-size: 14px;
-            color: #718078;
+            color: #777;
             margin-bottom: 20px;
         }
 
-        /* =========================================
-           ABOUT - UPDATED STYLING
-        ========================================= */
+        /* ABOUT */
         .about {
             padding: 90px 0;
-            background: #eef6ef;
+            background: white;
             position: relative;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #245c39, #8bc34a);
         }
 
         .about-container {
@@ -382,7 +446,8 @@
 
         .about-header h2 {
             font-size: 42px;
-            color: #245c39;
+            font-weight: 700;
+            color: var(--ds-text);
             margin-bottom: 15px;
             line-height: 1.2;
         }
@@ -392,15 +457,16 @@
             margin: 0 auto;
             font-size: 18px;
             line-height: 1.8;
-            color: #4a5a50;
+            color: #666;
         }
 
         .about-section-title {
             font-size: 24px;
-            color: #245c39;
+            font-weight: 700;
+            color: var(--ds-text);
             margin-bottom: 25px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #8bc34a;
+            border-bottom: 3px solid var(--ds-accent);
             display: inline-block;
         }
 
@@ -411,7 +477,7 @@
         .about-description p {
             font-size: 17px;
             line-height: 1.9;
-            color: #4a5a50;
+            color: #666;
             max-width: 900px;
         }
 
@@ -422,24 +488,26 @@
             margin-bottom: 50px;
         }
 
+        /* RESTORED: Left border styling with green edge */
         .about-service-item {
-            background: white;
+            background: var(--ds-card-bg);
             padding: 25px;
             border-radius: 12px;
-            border-left: 4px solid #245c39;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--ds-border);
+            border-left: 6px solid var(--ds-accent);
+            box-shadow: var(--ds-card-shadow);
             transition: all 0.3s ease;
         }
 
         .about-service-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(36, 92, 57, 0.12);
+            box-shadow: 0 8px 25px rgba(46, 125, 74, 0.12);
         }
 
         .about-service-title {
             font-size: 18px;
             font-weight: 700;
-            color: #245c39;
+            color: var(--ds-text);
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -453,67 +521,80 @@
         .about-service-item p {
             font-size: 15px;
             line-height: 1.7;
-            color: #56665c;
+            color: #777;
         }
 
         .about-approach {
-            background: white;
+            background: #f4f6ff;
             padding: 40px;
             border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(36, 92, 57, 0.1);
+            box-shadow: var(--ds-card-shadow);
             margin-bottom: 40px;
+            border: 1px solid var(--ds-border);
         }
 
         .about-approach h3 {
             font-size: 24px;
-            color: #245c39;
+            font-weight: 700;
+            color: var(--ds-text);
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #8bc34a;
+            border-bottom: 3px solid var(--ds-accent);
             display: inline-block;
         }
 
         .about-approach p {
             font-size: 17px;
             line-height: 1.8;
-            color: #4a5a50;
+            color: #666;
         }
 
         .about-tagline {
             text-align: center;
-            background: #245c39;
+            background: var(--ds-accent);
             color: white;
             padding: 30px;
-            border-radius: 18px;
+            border-radius: 12px;
             font-size: 22px;
             font-weight: 700;
             letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(36, 92, 57, 0.2);
+            box-shadow: 0 10px 30px rgba(46, 125, 74, 0.2);
         }
 
         /* CTA */
         .cta {
             padding: 100px 20px;
             text-align: center;
-            background: #245c39;
+            background: var(--ds-accent);
             color: white;
         }
 
         .cta h2 {
             font-size: 42px;
+            font-weight: 700;
             max-width: 700px;
             margin: 0 auto 15px;
         }
 
         .cta p {
             margin-bottom: 30px;
-            color: #dcebdd;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--ds-accent);
+        }
+
+        .cta .btn:hover {
+            background: #f0f0f0;
         }
 
         /* CONTACT */
         .contact {
             padding: 90px 0;
             text-align: center;
+            background: white;
         }
 
         .contact h2 {
@@ -523,7 +604,7 @@
         .contact > .container > p:not(.section-small) {
             max-width: 650px;
             margin: auto;
-            color: #6d796f;
+            color: #777;
         }
 
         .contact-details {
@@ -538,10 +619,20 @@
             font-weight: 600;
         }
 
+        .contact-details a {
+            color: var(--ds-accent);
+        }
+
+        .contact .btn {
+            margin-top: 20px;
+            background: var(--ds-accent);
+            color: white;
+        }
+
         /* FOOTER */
         footer {
-            background: #17251c;
-            color: white;
+            background: var(--ds-text);
+            color: #ccc;
             padding: 45px 0;
         }
 
@@ -554,15 +645,105 @@
 
         .footer-content h3 {
             margin-bottom: 5px;
+            color: white;
         }
 
         .footer-content p {
-            color: #b9c5bc;
+            color: #aaa;
         }
 
-        /* MOBILE */
+        /* MASCOT POPUP */
+        .mascot-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+            align-items: flex-end;
+            gap: 15px;
+            max-width: 350px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .mascot-popup.show {
+            display: flex;
+        }
+
+        .mascot-bubble {
+            background: white;
+            border: 1px solid var(--ds-border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            flex: 1;
+        }
+
+        .mascot-bubble h3 {
+            color: var(--ds-text);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .mascot-bubble p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .mascot-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: -15px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--ds-accent);
+        }
+
+        .mascot-img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mascot-btn {
+            display: inline-block;
+            background: var(--ds-accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mascot-btn:hover {
+            background: var(--ds-accent-hover);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* MOBILE - RESTORED ORIGINAL RESPONSIVENESS */
         @media (max-width: 900px) {
-            /* ADDED: Show hamburger, hide desktop nav */
             .hamburger {
                 display: flex;
             }
@@ -579,26 +760,32 @@
             .about-services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img {
+                height: 300px;
+            }
         }
 
         @media (max-width: 600px) {
             .nav {
-                min-height: 65px;
-            }
-
-            .logo {
-                font-size: 20px;
+                min-height: 50px;
             }
 
             .hero {
-                min-height: 580px;
+                min-height: auto;
+                padding: 10px 0;
+                scroll-margin-top: 50px;
             }
 
             .hero h1 {
                 font-size: 48px;
             }
 
-            .hero p {
+            .hero-text p {
                 font-size: 16px;
             }
 
@@ -652,104 +839,7 @@
             .about-header h2 {
                 font-size: 32px;
             }
-        }
 
-        /* =========================================
-           MASCOT POPUP
-        ========================================= */
-        
-        .mascot-popup {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: none; /* Hidden by default */
-            align-items: flex-end;
-            gap: 15px;
-            max-width: 350px;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        .mascot-popup.show {
-            display: flex;
-        }
-
-        .mascot-bubble {
-            background: white;
-            border: 2px solid #245c39;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-            flex: 1;
-        }
-
-        .mascot-bubble h3 {
-            color: #245c39;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .mascot-bubble p {
-            font-size: 14px;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        /* Speech bubble arrow pointing to mascot */
-        .mascot-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: 20px;
-            right: -15px;
-            border-width: 10px;
-            border-style: solid;
-            border-color: transparent transparent transparent #245c39;
-        }
-
-        .mascot-img {
-            width: 120px;
-            height: auto;
-            border-radius: 10px;
-            object-fit: contain;
-            background: white;
-            padding: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .mascot-btn {
-            display: inline-block;
-            background: #245c39;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: background 0.3s;
-            width: 100%;
-            text-align: center;
-        }
-
-        .mascot-btn:hover {
-            background: #8bc34a;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
             .mascot-popup {
                 bottom: 10px;
                 right: 10px;
@@ -768,7 +858,7 @@
             }
 
             .mascot-bubble::after {
-                display: none; /* Hide arrow on mobile */
+                display: none;
             }
         }
     </style>
@@ -782,7 +872,7 @@
                 <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg" alt="Camalia Enterprise Ltd Logo">
             </a>
             
-            <!-- ADDED: Hamburger Menu Button -->
+            <!-- Hamburger Menu Button -->
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -800,7 +890,7 @@
             </nav>
         </div>
 
-        <!-- ADDED: Mobile Menu -->
+        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
@@ -814,10 +904,17 @@
     <!-- HERO -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <p class="hero-small">CAMALIA ENTERPRISE LTD</p>
-            <h1>Transforming<br><span>Outdoor Spaces</span></h1>
-            <p>Professional Landscaping • Garden Design • Maintenance Services in Kenya and East Africa</p>
-            <a href="#contact" class="btn">Get a Free Quotation</a>
+            <div class="hero-text">
+                <p class="hero-small">CAMALIA ENTERPRISE LTD</p>
+                <h1>Transforming<br><span>Outdoor Spaces</span></h1>
+                <p>Professional Landscaping • Garden Design • Maintenance Services in Kenya and East Africa</p>
+                <a href="#contact" class="btn">Get a Free Quotation</a>
+            </div>
+            
+            <!-- HERO IMAGE CARD -->
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Beautiful Garden Landscape">
+            </div>
         </div>
     </section>
 
@@ -834,7 +931,7 @@
                 <div class="service-card">
                     <div class="service-icon">🌳</div>
                     <h3>Garden Design</h3>
-                    <p>Supply and planting of premium plants including Golden Palms, Travellers Palms, Italian Trees, and Highbreed Bottle Trees.</p>
+                    <p>Supply and planting of premium plants including Golden Palms, Travelli Palms, Italian Trees, and Highbreed Bottle Trees.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🌺</div>
@@ -1045,9 +1142,7 @@
         </div>
     </section>
 
-    <!-- =========================================
-         UPDATED ABOUT SECTION
-    ========================================= -->
+    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="about-container">
             
@@ -1152,12 +1247,12 @@
             <p>Have a question about our services or need a quotation? Contact us and we'll be happy to help.</p>
 
             <div class="contact-details">
-                <p>📞 Phone: <a href="tel:+254722734905" style="color:#2e7d4a; font-weight:700;">0722 734 905</a></p>
-                <p>💬 WhatsApp: <a href="https://wa.me/254722734905" style="color:#2e7d4a; font-weight:700;">0722 734 905</a></p>
+                <p>📞 Phone: <a href="tel:+254722734905" style="font-weight:700;">0722 734 905</a></p>
+                <p>💬 WhatsApp: <a href="https://wa.me/254722734905" style="font-weight:700;">0722 734 905</a></p>
                 <p>📍 Location: Nairobi, Kenya</p>
             </div>
 
-            <a href="tel:+254722734905" class="btn" style="margin-top:20px; background:#2e7d4a; color:white;">📞 Call Robert Now</a>
+            <a href="tel:+254722734905" class="btn">📞 Call Robert Now</a>
         </div>
     </section>
 
@@ -1172,9 +1267,7 @@
         </div>
     </footer>
 
-    <!-- =========================================
-         MASCOT POPUP
-    ========================================= -->
+    <!-- MASCOT POPUP -->
     <div id="camalia-mascot-popup" class="mascot-popup">
         <div class="mascot-bubble">
             <h3>🚧 Site Under Upgrades!</h3>
@@ -1186,14 +1279,13 @@
     </div>
 
     <script>
-        // ADDED: Hamburger Menu Toggle
+        // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        hamburger.addEventListener('click', function() {
-            // Toggle active class on hamburger
+        hamburger.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click from bubbling to document
             this.classList.toggle('active');
-            // Toggle active class on mobile menu
             mobileMenu.classList.toggle('active');
         });
 
@@ -1203,6 +1295,14 @@
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
             });
+        });
+
+        // ADDED: Close mobile menu when clicking anywhere on the screen
+        document.addEventListener('click', function(event) {
+            if (mobileMenu.classList.contains('active') && !mobileMenu.contains(event.target) && event.target !== hamburger) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
         });
 
         // Smooth scrolling for navigation links
@@ -1219,17 +1319,14 @@
         const mascotPopup = document.getElementById('camalia-mascot-popup');
         const closeMascotBtn = document.getElementById('close-mascot-popup');
 
-        // Show popup after 2 seconds (only if not dismissed in this session)
         window.addEventListener('load', function() {
-            // Check if user has dismissed it in this session
             if (!sessionStorage.getItem('camaliaPopupDismissed')) {
                 setTimeout(() => {
                     mascotPopup.classList.add('show');
-                }, 2000); // 2-second delay
+                }, 2000);
             }
         });
 
-        // Close popup and remember for this session
         closeMascotBtn.addEventListener('click', function() {
             mascotPopup.classList.remove('show');
             sessionStorage.setItem('camaliaPopupDismissed', 'true');
