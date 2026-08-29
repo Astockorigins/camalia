@@ -8,7 +8,7 @@
 
 ## 📋 About Us
 
-Camalia Enterprise Ltd is a professional landscaping and garden design company based in Kangemi, Nairobi. We specialize in creating beautiful and sustainable outdoor environments for both residential and commercial clients.
+Camalia Enterprise Ltd is a professional landscaping and garden design company based in Nairobi, kenya. We specialize in creating beautiful and sustainable outdoor environments for both residential and commercial clients.
 
 Our team, led by **Robert Gitau**, brings years of experience in:
 - Garden rehabilitation
@@ -65,7 +65,7 @@ Our team, led by **Robert Gitau**, brings years of experience in:
 
 **Phone/WhatsApp:** [0722 734 905](tel:+254722734905)
 
-**Location:** Mountain View House No.292, Kangemi, Nairobi, Kenya
+**Location:** Kenya, Nairobi, Kenya
 
 **Email:** *(Add your email here if available)*
 
