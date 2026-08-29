@@ -74,7 +74,7 @@ Our team, led by **Robert Gitau**, brings years of experience in:
 ## 🌐 Website
 
 This website is hosted on **GitHub Pages** and is available at:
-`https://astockorigins.github.io/camalia-website/`
+`https://astockorigins.github.io/camalia/`
 
 ---
 
