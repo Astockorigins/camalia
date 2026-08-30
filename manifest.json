@@ -2,13 +2,13 @@
     "name": "Camalia Enterprise Ltd",
     "short_name": "Camalia",
     "description": "Professional Landscaping & Garden Design Services in Kenya",
-    "start_url": "/",
+    "start_url": "/cam/",
     "display": "standalone",
     "display_override": ["window-controls-overlay", "standalone"],
     "background_color": "#2e7d4a",
     "theme_color": "#2e7d4a",
     "orientation": "portrait",
-    "scope": "/",
+    "scope": "/cam/",
     "categories": ["lifestyle", "business"],
     "lang": "en-KE",
     "icons": [
@@ -30,13 +30,13 @@
             "name": "Contact Us",
             "short_name": "Contact",
             "description": "Get in touch with Camalia",
-            "url": "/#contact"
+            "url": "/cam/#contact"
         },
         {
             "name": "Our Services",
             "short_name": "Services",
             "description": "View our landscaping services",
-            "url": "/#services"
+            "url": "/cam/#services"
         }
     ]
 }
