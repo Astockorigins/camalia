@@ -2,7 +2,1808 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" c<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camalia Enterprise Ltd | Landscaping & Garden Design</title>
+    <meta name="description" content="Professional landscaping, garden design and maintenance services in Nairobi, Kenya.">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2e7d4a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Camalia">
+    
+    <!-- Primary Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+    
+    <!-- PWA Manifest - Will be injected by JavaScript -->
+    
+    <!-- Importing a modern font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           DEEPSEEK STYLE STYLESHEET (GREEN THEME)
+        ========================================= */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ds-bg: #f8f9fa; 
+            --ds-text: #1a1a2e; 
+            --ds-accent: #2e7d4a;
+            --ds-accent-hover: #245c39;
+            --ds-card-bg: #ffffff;
+            --ds-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --ds-border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ds-bg);
+            color: var(--ds-text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* HEADER */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--ds-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--ds-accent);
+        }
+
+        .cart-link {
+            background: var(--ds-accent);
+            color: white !important;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cart-link:hover {
+            background: var(--ds-accent-hover);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: transparent !important;
+            border: none !important;
+            padding: 10px;
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hamburger:focus,
+        .hamburger:active,
+        .hamburger:focus-visible {
+            outline: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #245c39;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            background: #2e7d4a;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            background: #2e7d4a;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            background: #2e7d4a;
+        }
+
+        .hamburger:hover span {
+            background: #2e7d4a;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--ds-border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-menu a {
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .mobile-menu a:hover {
+            background: #f4f6ff;
+            color: var(--ds-accent);
+        }
+
+        .mobile-menu .cart-link {
+            color: white !important;
+            background: var(--ds-accent);
+            text-align: center;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            padding: 20px 0;
+            scroll-margin-top: 60px;
+        }
+
+        .hero-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .hero-text {
+            color: var(--ds-text);
+        }
+
+        .hero-small {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--ds-accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--ds-accent);
+        }
+
+        .hero-text p {
+            max-width: 550px;
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--ds-accent);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: var(--ds-accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero-img {
+            background: var(--ds-card-bg);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: var(--ds-card-shadow);
+            border: 1px solid var(--ds-border);
+            overflow: hidden;
+            height: 450px;
+            width: 100%;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 60px 0;
+            background-color: var(--ds-accent);
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            overflow: hidden;
+            color: white;
+        }
+
+        .services-ad-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .services-ad-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .services-flex-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .services-ad-image-wrapper {
+            position: relative;
+            max-width: 450px;
+            flex-shrink: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .services-ad-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            display: block;
+        }
+
+        .services-ad-badge {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .services-ad-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .services-ad-badge-1 {
+            top: 10%;
+            right: -20px;
+            transform: rotate(-10deg);
+        }
+
+        .services-ad-badge-2 {
+            bottom: 20%;
+            left: -30px;
+            transform: rotate(-5deg);
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            flex: 1;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .services-list li {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            color: #ffffff;
+            word-break: break-word;
+        }
+
+        .services-ad-btn {
+            background: white;
+            color: var(--ds-accent);
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .services-ad-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* PROJECTS */
+        .projects {
+            padding: 100px 0;
+            background-color: var(--ds-bg);
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 0;
+        }
+
+        .section-small {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--ds-accent);
+        }
+
+        .view-all {
+            color: var(--ds-accent);
+            font-weight: 700;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid var(--ds-border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--ds-card-shadow);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .project-image {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f6ff;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 22px;
+        }
+
+        .category-name {
+            color: #777;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-info h3 {
+            font-size: 20px;
+            margin: 7px 0;
+            font-weight: 600;
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 90px 0;
+            background-color: white;
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--ds-text);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .about-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .about-section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ds-text);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--ds-accent);
+            display: inline-block;
+        }
+
+        .about-description {
+            margin-bottom: 50px;
+        }
+
+        .about-description p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #666;
+            max-width: 900px;
+        }
+
+        .about-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .about-service-item {
+            background: var(--ds-card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--ds-border);
+            border-left: 6px solid var(--ds-accent);
+            box-shadow: var(--ds-card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .about-service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(46, 125, 74, 0.12);
+        }
+
+        .about-service-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ds-text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-service-icon {
+            font-size: 24px;
+        }
+
+        .about-service-item p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #777;
+        }
+
+        .about-approach {
+            background: #f4f6ff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: var(--ds-card-shadow);
+            margin-bottom: 40px;
+            border: 1px solid var(--ds-border);
+        }
+
+        .about-approach h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ds-text);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--ds-accent);
+            display: inline-block;
+        }
+
+        .about-approach p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .about-tagline {
+            text-align: center;
+            background: var(--ds-accent);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(46, 125, 74, 0.2);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--ds-accent);
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--ds-accent);
+        }
+
+        .cta .btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 90px 0;
+            text-align: center;
+            background-color: white;
+            background-image: 
+                linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .contact h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact > .container > p:not(.section-small) {
+            max-width: 650px;
+            margin: auto;
+            color: #777;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .contact-details p {
+            font-weight: 600;
+        }
+
+        .contact-details a {
+            color: var(--ds-accent);
+        }
+
+        .contact .btn {
+            margin-top: 20px;
+            background: var(--ds-accent);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #2e7d4a;
+            color: #ffffff;
+            padding: 45px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .footer-content p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* MASCOT POPUP */
+        .mascot-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+            align-items: flex-end;
+            gap: 15px;
+            max-width: 350px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .mascot-popup.show {
+            display: flex;
+        }
+
+        .mascot-bubble {
+            background: white;
+            border: 1px solid var(--ds-border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            flex: 1;
+        }
+
+        .mascot-bubble h3 {
+            color: var(--ds-text);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .mascot-bubble p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .mascot-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: -15px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--ds-accent);
+        }
+
+        .mascot-img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mascot-btn {
+            display: inline-block;
+            background: var(--ds-accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mascot-btn:hover {
+            background: var(--ds-accent-hover);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* PWA INSTALL BUTTON */
+        .install-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--ds-accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: none;
+            transition: 0.3s;
+            min-height: 48px;
+        }
+
+        .install-btn:hover {
+            background: var(--ds-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .install-btn.show {
+            display: block;
+        }
+
+        /* UPDATE NOTIFICATION */
+        .update-notification {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--ds-accent);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: none;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .update-notification.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .update-btn {
+            background: white;
+            color: var(--ds-accent);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .update-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img {
+                height: 300px;
+            }
+
+            .services-flex-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .services-ad-image-wrapper {
+                max-width: 100%;
+            }
+
+            .services-ad-badge-1 {
+                right: 0;
+            }
+
+            .services-ad-badge-2 {
+                left: 0;
+            }
+
+            .services-list {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                min-height: 50px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 10px 0;
+                scroll-margin-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .services {
+                padding: 40px 0;
+            }
+
+            .services-ad-title {
+                font-size: 32px;
+            }
+
+            .services-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                max-width: 100%;
+            }
+
+            .services-list li {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .projects,
+            .about,
+            .contact {
+                padding: 65px 0;
+            }
+
+            .projects h2,
+            .about h2,
+            .contact h2 {
+                font-size: 31px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                align-items: start;
+                gap: 15px;
+                flex-direction: column;
+            }
+
+            .project-image {
+                height: 230px;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-approach {
+                padding: 25px;
+            }
+
+            .about-tagline {
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            .about-header h2 {
+                font-size: 32px;
+            }
+
+            .mascot-popup {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: 100%;
+                flex-direction: column-reverse;
+                align-items: flex-end;
+            }
+
+            .mascot-img {
+                width: 80px;
+            }
+
+            .mascot-bubble {
+                width: 100%;
+            }
+
+            .mascot-bubble::after {
+                display: none;
+            }
+
+            .install-btn {
+                bottom: 70px;
+                left: 10px;
+                padding: 10px 15px;
+                font-size: 13px;
+                min-height: 44px;
+            }
+
+            .update-notification {
+                bottom: 70px;
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+
+            .update-btn {
+                margin-left: 10px;
+                padding: 6px 15px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">
+                <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg" alt="Camalia Enterprise Ltd Logo">
+            </a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:+254722734905" class="cart-link">📞 Call Now</a>
+            </nav>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+254722734905" class="cart-link">📞 Call Now</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-small">CAMALIA ENTERPRISE LTD</p>
+                <h1>Transforming<br><span>Outdoor Spaces</span></h1>
+                <p>Professional Landscaping • Garden Design • Maintenance Services in Kenya and East Africa</p>
+                <a href="#contact" class="btn">Get a Free Quotation</a>
+            </div>
+            
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Beautiful Garden Landscape">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <div class="services-ad-container">
+            <h2 class="services-ad-title">Our Services</h2>
+            
+            <div class="services-flex-row">
+                <div class="services-ad-image-wrapper">
+                    <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/ChatGPT%20Image%20Aug%2029,%202026,%2011_22_30%20PM.png" alt="Office Desk with Indoor Plant" class="services-ad-image">
+                    
+                    <div class="services-ad-badge services-ad-badge-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Professional
+                    </div>
+
+                    <div class="services-ad-badge services-ad-badge-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Quality Guaranteed
+                    </div>
+                </div>
+
+                <ul class="services-list">
+                    <li>Landscaping</li>
+                    <li>Garden Design</li>
+                    <li>Maintenance</li>
+                    <li>Plant Supply</li>
+                    <li>Hardscaping</li>
+                    <li>Softscaping</li>
+                    <li>Swimming Pools</li>
+                    <li>Cabro Paving</li>
+                </ul>
+            </div>
+
+            <a href="#contact" class="services-ad-btn">Get a Quote →</a>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="section-small">OUR WORK</p>
+                    <h2>Recent Projects</h2>
+                </div>
+                <a href="#contact" class="view-all">Get a Quote →</a>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313303719.jpg" alt="World Vision HQ Courtyard">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Commercial</span>
+                        <h3>World Vision HQ - Karen</h3>
+                        <p class="project-description">Courtyard design with water feature, outdoor sitting, plants and walkway.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313309260.jpg" alt="World Vision HQ Pergola">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Commercial</span>
+                        <h3>World Vision HQ - Karen</h3>
+                        <p class="project-description">Plant beds, walkways, pergola and outdoor sitting area.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313313203.jpg" alt="World Vision HQ Entrance">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Commercial</span>
+                        <h3>World Vision HQ - Karen</h3>
+                        <p class="project-description">Left side along the entrance and planting at the entrance.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313318302.jpg" alt="World Vision HQ Plant Beds">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Commercial</span>
+                        <h3>World Vision HQ - Karen</h3>
+                        <p class="project-description">Plant beds front of the office block.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313846500.jpg" alt="Residential House Kikuyu">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Residential</span>
+                        <h3>Residential House - Kikuyu</h3>
+                        <p class="project-description">Planting in the lawn area, walkway, retaining wall.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313851975.jpg" alt="Residential House Kikuyu Mounds">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Residential</span>
+                        <h3>Residential House - Kikuyu</h3>
+                        <p class="project-description">Planting in the lawn area, mounds, & plant beds.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313857298.jpg" alt="Residential House Retaining Wall">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Residential</span>
+                        <h3>Residential House - Kikuyu</h3>
+                        <p class="project-description">Planting along the retaining wall and a combination of mazeras stones.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313860913.jpg" alt="Water Features and Pergola">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Water Features</span>
+                        <h3>Water Features & Pergola</h3>
+                        <p class="project-description">Naturalistic waterfall and pond with pergola.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313864403.jpg" alt="Water Features and Pergola 2">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Water Features</span>
+                        <h3>Water Features & Pergola</h3>
+                        <p class="project-description">Fountain, water feature and pergola structure.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313884590.jpg" alt="Andrew W. Nandi Rd">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Residential</span>
+                        <h3>Andrew W. - Nandi Rd, Karen (2014)</h3>
+                        <p class="project-description">Gazebo inside water feature, wooden bridge, walkway, and outdoor planting.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313901330.jpg" alt="Avic Apartments Water Feature">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Commercial</span>
+                        <h3>Avic Apartments - Kileleshwa (2017)</h3>
+                        <p class="project-description">Water feature constructed with natural stones and water fountain.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313904877.jpg" alt="Avic Apartments Planters and Bridge">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Commercial</span>
+                        <h3>Avic Apartments - Kileleshwa (2017)</h3>
+                        <p class="project-description">Planters forming part of the water feature and wooden bridge connecting the water features.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313935772.jpg" alt="Mukono Uganda Pool Construction">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Construction</span>
+                        <h3>Swimming Pool - Mukono, Uganda (2013)</h3>
+                        <p class="project-description">Excavation and laying reinforced concrete foundation for the pool.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313939037.jpg" alt="Mukono Uganda Pool Walls">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Construction</span>
+                        <h3>Swimming Pool - Mukono, Uganda (2013)</h3>
+                        <p class="project-description">Reinforced concrete walls and floor.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/camalia%20projects/FB_IMG_1731313944311.jpg" alt="Mukono Uganda Finished Pool">
+                    </div>
+                    <div class="project-info">
+                        <span class="category-name">Construction</span>
+                        <h3>Swimming Pool - Mukono, Uganda (2013)</h3>
+                        <p class="project-description">Finished pools, changing rooms and landscape.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="about-container">
+            
+            <div class="about-header">
+                <p class="section-small">ABOUT US</p>
+                <h2>About Camalia Enterprise Ltd</h2>
+                <p>Camalia Enterprise Ltd is a Kenyan landscaping and garden services company dedicated to creating beautiful, functional, and sustainable outdoor spaces. With years of experience in landscaping, construction, horticulture, and garden maintenance, we provide professional solutions for residential, commercial, institutional, and property development projects.</p>
+            </div>
+
+            <div class="about-description">
+                <h3 class="about-section-title">What We Do</h3>
+                <p>At Camalia Enterprise Ltd, we offer a complete range of landscaping and outdoor services, including:</p>
+            </div>
+
+            <div class="about-services-grid">
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🎨</span> Landscape Design & Architecture
+                    </div>
+                    <p>Professional planning and design of beautiful outdoor spaces tailored to each property.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🏗️</span> Landscaping Construction
+                    </div>
+                    <p>Complete installation and development of gardens, lawns, pathways, outdoor features, and landscape structures.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🧱</span> Hardscaping
+                    </div>
+                    <p>Cabro paving, walkways, patios, retaining walls, garden structures, and other hard landscape features.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🌿</span> Softscaping
+                    </div>
+                    <p>Supply and planting of trees, palms, flowers, shrubs, hedges, lawns, and other ornamental plants.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">✂️</span> Garden & Landscape Maintenance
+                    </div>
+                    <p>Regular lawn care, pruning, trimming, planting, fertilizing, cleaning, and general garden maintenance.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🏊</span> Swimming Pool Construction
+                    </div>
+                    <p>Swimming pool construction and surrounding landscape development.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🌸</span> Plant Nursery & Florist Services
+                    </div>
+                    <p>Supply of ornamental plants, palms, flowers, indoor plants, and other landscaping materials.</p>
+                </div>
+
+                <div class="about-service-item">
+                    <div class="about-service-title">
+                        <span class="about-service-icon">🛣️</span> Camalia Cabro Roll Installation
+                    </div>
+                    <p>Professional installation of cabro paving for driveways, pathways, parking areas, compounds, and other outdoor spaces.</p>
+                </div>
+            </div>
+
+            <div class="about-approach">
+                <h3>Our Approach</h3>
+                <p>We combine creative landscape design, quality workmanship, and reliable maintenance to transform ordinary spaces into attractive and enjoyable environments. Whether you need a complete landscape from the ground up or ongoing garden maintenance, our team works closely with clients to deliver practical solutions that suit their property, style, and budget.</p>
+            </div>
+
+            <div class="about-tagline">
+                Camalia Enterprise Ltd – Transforming Spaces, Growing Beauty.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Garden?</h2>
+            <p>Contact us today for a free quotation on your landscaping project.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <p class="section-small">GET IN TOUCH</p>
+            <h2>Contact Camalia Enterprise</h2>
+            <p>Have a question about our services or need a quotation? Contact us and we'll be happy to help.</p>
+
+            <div class="contact-details">
+                <p>📞 Phone: <a href="tel:+254722734905" style="font-weight:700;">0722 734 905</a></p>
+                <p>💬 WhatsApp: <a href="https://wa.me/254722734905" style="font-weight:700;">0722 734 905</a></p>
+                <p>📧 Email: <a href="mailto:camalia@camalia.info" style="font-weight:700;">camalia@camalia.info</a></p>
+                <p>📍 Location: Nairobi, Kenya</p>
+            </div>
+
+            <a href="tel:+254722734905" class="btn">📞 Call Robert Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>🌿 Camalia Enterprise Ltd</h3>
+                <p>Landscaping • Garden Design • Maintenance</p>
+            </div>
+            <p>© 2026 Camalia Enterprise Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- MASCOT POPUP -->
+    <div id="camalia-mascot-popup" class="mascot-popup">
+        <div class="mascot-bubble">
+            <h3>🚧 Site Under Upgrades!</h3>
+            <p>Hello! 👋 I'm the Camalia mascot. Our main site is currently undergoing some major upgrades. We are rolling out brand new features soon!</p>
+            <p style="font-size: 14px; margin-top: 10px;">In the meantime, feel free to explore our current services and recent projects.</p>
+            <button id="close-mascot-popup" class="mascot-btn">Continue to Site ➜</button>
+        </div>
+        <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/mascot/ChatGPT%20Image%20Aug%2026,%202026,%2011_03_23%20PM.png" alt="Camalia Mascot" class="mascot-img">
+    </div>
+
+    <!-- PWA INSTALL BUTTON -->
+    <button id="install-btn" class="install-btn">📲 Install App</button>
+
+    <!-- PWA UPDATE NOTIFICATION -->
+    <div id="update-notification" class="update-notification">
+        <span>🔄 New update available!</span>
+        <button id="update-btn" class="update-btn">Update Now</button>
+    </div>
+
+    <script>
+        // =========================================
+        // INJECT PWA MANIFEST DYNAMICALLY
+        // =========================================
+        (function injectManifest() {
+            const manifest = {
+                name: "Camalia Enterprise Ltd",
+                short_name: "Camalia",
+                description: "Professional Landscaping & Garden Design Services in Kenya",
+                start_url: "/",
+                display: "standalone",
+                display_override: ["window-controls-overlay", "standalone"],
+                background_color: "#2e7d4a",
+                theme_color: "#2e7d4a",
+                orientation: "portrait",
+                scope: "/",
+                categories: ["lifestyle", "business"],
+                lang: "en-KE",
+                icons: [
+                    {
+                        src: "https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg",
+                        sizes: "192x192",
+                        type: "image/jpeg",
+                        purpose: "any"
+                    },
+                    {
+                        src: "https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg",
+                        sizes: "512x512",
+                        type: "image/jpeg",
+                        purpose: "any"
+                    }
+                ],
+                shortcuts: [
+                    {
+                        name: "Contact Us",
+                        short_name: "Contact",
+                        description: "Get in touch with Camalia",
+                        url: "/#contact"
+                    },
+                    {
+                        name: "Our Services",
+                        short_name: "Services",
+                        description: "View our landscaping services",
+                        url: "/#services"
+                    }
+                ]
+            };
+
+            // Create manifest link element
+            const manifestLink = document.createElement('link');
+            manifestLink.rel = 'manifest';
+            manifestLink.href = 'data:application/manifest+json,' + encodeURIComponent(JSON.stringify(manifest));
+            document.head.appendChild(manifestLink);
+            
+            console.log('✅ PWA Manifest injected successfully!');
+        })();
+
+        // =========================================
+        // HAMBURGER MENU
+        // =========================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function(event) {
+            event.stopPropagation();
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (mobileMenu.classList.contains('active') && !mobileMenu.contains(event.target) && event.target !== hamburger) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // =========================================
+        // SMOOTH SCROLLING
+        // =========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =========================================
+        // MASCOT POPUP
+        // =========================================
+        const mascotPopup = document.getElementById('camalia-mascot-popup');
+        const closeMascotBtn = document.getElementById('close-mascot-popup');
+
+        window.addEventListener('load', function() {
+            if (!sessionStorage.getItem('camaliaPopupDismissed')) {
+                setTimeout(() => {
+                    mascotPopup.classList.add('show');
+                }, 2000);
+            }
+        });
+
+        closeMascotBtn.addEventListener('click', function() {
+            mascotPopup.classList.remove('show');
+            sessionStorage.setItem('camaliaPopupDismissed', 'true');
+        });
+
+        // =========================================
+        // PWA INSTALLATION - FULLY STANDALONE
+        // =========================================
+        
+        let deferredPrompt = null;
+        const installBtn = document.getElementById('install-btn');
+        const updateNotification = document.getElementById('update-notification');
+        const updateBtn = document.getElementById('update-btn');
+
+        // Listen for beforeinstallprompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.classList.add('show');
+            installBtn.textContent = '📲 Install Camalia App';
+        });
+
+        // Handle app installed event
+        window.addEventListener('appinstalled', () => {
+            installBtn.classList.remove('show');
+            deferredPrompt = null;
+            console.log('✅ Camalia app installed successfully!');
+        });
+
+        // Check if already in standalone mode
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            installBtn.classList.remove('show');
+        }
+
+        // iOS detection and handling
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        const isInStandalone = window.navigator.standalone === true;
+
+        if (isIOS && !isInStandalone) {
+            installBtn.classList.add('show');
+            installBtn.textContent = '📲 Add to Home Screen';
+        }
+
+        // Click handler for install button
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installBtn.classList.remove('show');
+                }
+                deferredPrompt = null;
+            } else if (isIOS) {
+                const shouldShowInstructions = confirm(
+                    '🌿 Add Camalia to your Home Screen:\n\n' +
+                    '1. Tap the Share icon (box with arrow) at the bottom\n' +
+                    '2. Scroll down and tap "Add to Home Screen"\n' +
+                    '3. Tap "Add" in the top-right corner\n\n' +
+                    'Would you like to see these instructions again later?'
+                );
+                if (!shouldShowInstructions) {
+                    installBtn.classList.remove('show');
+                }
+            } else {
+                alert('📲 To install this app, open this page in Chrome or Safari and look for the install option in your browser menu.');
+            }
+        });
+
+        // =========================================
+        // SERVICE WORKER - FULLY STANDALONE
+        // This creates a service worker from a blob URL
+        // Note: Some browsers may block this, but it's the best we can do with a single file
+        // =========================================
+        
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // The service worker code as a string
+                const swCode = `
+                    const CACHE_NAME = 'camalia-v2';
+                    const urlsToCache = ['/'];
+                    
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.addAll(urlsToCache))
+                                .then(() => self.skipWaiting())
+                        );
+                    });
+                    
+                    self.addEventListener('activate', event => {
+                        event.waitUntil(
+                            caches.keys().then(cacheNames => {
+                                return Promise.all(
+                                    cacheNames.map(cacheName => {
+                                        if (cacheName !== CACHE_NAME) {
+                                            return caches.delete(cacheName);
+                                        }
+                                    })
+                                );
+                            }).then(() => self.clients.claim())
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => {
+                                    if (response) {
+                                        return response;
+                                    }
+                                    return fetch(event.request)
+                                        .then(response => {
+                                            if (!response || response.status !== 200 || response.type !== 'basic') {
+                                                return response;
+                                            }
+                                            const responseToCache = response.clone();
+                                            caches.open(CACHE_NAME)
+                                                .then(cache => {
+                                                    cache.put(event.request, responseToCache);
+                                                });
+                                            return response;
+                                        })
+                                        .catch(() => {
+                                            return new Response(
+                                                '<html><body><h1>🌿 Camalia - Offline</h1><p>Please connect to the internet to access our services.</p></body></html>',
+                                                {
+                                                    status: 503,
+                                                    statusText: 'Service Unavailable',
+                                                    headers: new Headers({
+                                                        'Content-Type': 'text/html'
+                                                    })
+                                                }
+                                            );
+                                        });
+                                })
+                        );
+                    });
+                `;
+                
+                // Create a Blob from the service worker code
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                // Register the service worker
+                navigator.serviceWorker.register(swUrl)
+                    .then(registration => {
+                        console.log('✅ Service Worker registered successfully!');
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    updateNotification.classList.add('show');
+                                }
+                            });
+                        });
+                    })
+                    .catch(err => {
+                        console.log('⚠️ Service Worker registration failed:', err);
+                        console.log('ℹ️ This is expected if the browser blocks blob URL service workers.');
+                        console.log('💡 For best PWA support, create a sw.js file in your root directory.');
+                    });
+            });
+        }
+
+        // Update button handler
+        updateBtn.addEventListener('click', () => {
+            updateNotification.classList.remove('show');
+            if (navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage('skipWaiting');
+            }
+        });
+
+        // Check for service worker updates
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                refreshing = true;
+                window.location.reload();
+            }
+        });
+
+        console.log('✅ Camalia PWA initialized successfully!');
+        console.log('📱 To test PWA features:');
+        console.log('   - Chrome DevTools → Application → Manifest');
+        console.log('   - Chrome DevTools → Application → Service Workers');
+        console.log('   - Lighthouse → Generate PWA report');
+        console.log('ℹ️ Note: Service worker from blob URL works in Chrome/Edge but may be blocked in some browsers.');
+    </script>
+</body>
+</html>ontent="width=device-width, initial-scale=1.0">
     <title>Camalia Enterprise Ltd | Landscaping & Garden Design</title>
     <meta name="description" content="Professional landscaping, garden design and maintenance services in Nairobi, Kenya.">
     
