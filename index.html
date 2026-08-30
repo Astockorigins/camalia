@@ -114,7 +114,7 @@
             background: var(--ds-accent-hover);
         }
 
-        /* Hamburger Menu - FIXED: No background/box, only icon color changes */
+        /* Hamburger Menu */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -202,22 +202,17 @@
             display: flex;
         }
 
-        /* HERO - The "DeepSeek" look */
+        /* HERO */
         .hero {
             min-height: auto;
             display: flex;
             align-items: center;
-            
-            /* Wire-mesh grid background */
             background-color: #f8f9fa;
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
-            
             padding: 20px 0;
-            
-            /* FIXED: Added scroll-margin-top to account for sticky header */
             scroll-margin-top: 60px;
         }
 
@@ -297,22 +292,15 @@
             object-fit: cover;
         }
 
-        /* =========================================
-           SERVICES SECTION (COURSERA AD STYLE)
-        ========================================= */
+        /* SERVICES SECTION */
         .services {
             padding: 60px 0;
-            background-color: var(--ds-accent); /* GREEN Background */
-            
-            /* ADDED: Wire-mesh grid background */
+            background-color: var(--ds-accent);
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
-            
-            /* FIXED: Prevents horizontal overflow */
             overflow: hidden;
-            
             color: white;
         }
 
@@ -320,7 +308,6 @@
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
-            /* FIXED: Prevents horizontal overflow on mobile */
             width: 100%;
             padding: 0 20px;
         }
@@ -332,7 +319,6 @@
             text-align: left;
         }
 
-        /* Flex layout for image + capsules on large screens */
         .services-flex-row {
             display: flex;
             align-items: center;
@@ -346,7 +332,6 @@
             max-width: 450px;
             flex-shrink: 0;
             margin: 0;
-            /* FIXED: Prevents image wrapper from overflowing */
             width: 100%;
         }
 
@@ -389,7 +374,6 @@
             transform: rotate(-5deg);
         }
 
-        /* Services titles list - CHANGED TO MATCH GREEN THEME */
         .services-list {
             list-style: none;
             padding: 0;
@@ -398,20 +382,19 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             flex: 1;
-            /* FIXED: Prevents capsules from overflowing */
             width: 100%;
             min-width: 0;
         }
 
         .services-list li {
-            background: rgba(255, 255, 255, 0.15); /* CHANGED: Semi-transparent white */
-            border: 1px solid rgba(255, 255, 255, 0.4); /* CHANGED: Subtle border */
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 50px;
             padding: 12px 24px;
             font-size: 16px;
             font-weight: 600;
             text-align: center;
-            color: #ffffff; /* CHANGED: White text for readability */
+            color: #ffffff;
             word-break: break-word;
         }
 
@@ -431,11 +414,10 @@
             transform: translateY(-2px);
         }
 
-        /* PROJECTS - ADDED WIRE MESH BACKGROUND */
+        /* PROJECTS */
         .projects {
             padding: 100px 0;
             background-color: var(--ds-bg);
-            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
@@ -524,11 +506,10 @@
             margin-bottom: 20px;
         }
 
-        /* ABOUT - ADDED WIRE MESH BACKGROUND */
+        /* ABOUT */
         .about {
             padding: 90px 0;
             background-color: white;
-            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
@@ -591,7 +572,6 @@
             margin-bottom: 50px;
         }
 
-        /* RESTORED: Left border styling with green edge */
         .about-service-item {
             background: var(--ds-card-bg);
             padding: 25px;
@@ -693,12 +673,11 @@
             background: #f0f0f0;
         }
 
-        /* CONTACT - ADDED WIRE MESH BACKGROUND */
+        /* CONTACT */
         .contact {
             padding: 90px 0;
             text-align: center;
             background-color: white;
-            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
@@ -737,9 +716,9 @@
             color: white;
         }
 
-        /* FOOTER - CHANGED TO BEAUTIFUL GREEN */
+        /* FOOTER */
         footer {
-            background: #2e7d4a; /* CHANGED: Beautiful Green */
+            background: #2e7d4a;
             color: #ffffff;
             padding: 45px 0;
         }
@@ -839,9 +818,64 @@
             background: var(--ds-accent-hover);
         }
 
+        /* UPDATE NOTIFICATION */
+        .update-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2e7d4a;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            gap: 15px;
+            max-width: 350px;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .update-notification.show {
+            display: flex;
+        }
+
+        .update-notification p {
+            flex: 1;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .update-btn {
+            background: white;
+            color: #2e7d4a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .update-btn:hover {
+            background: #f0f0f0;
+        }
+
         @keyframes slideIn {
             from {
                 transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100px);
                 opacity: 0;
             }
             to {
@@ -878,7 +912,7 @@
             display: block;
         }
 
-        /* MOBILE - RESTORED ORIGINAL RESPONSIVENESS */
+        /* MOBILE RESPONSIVENESS */
         @media (max-width: 900px) {
             .hamburger {
                 display: flex;
@@ -904,7 +938,6 @@
                 height: 300px;
             }
 
-            /* Stack image above capsules on smaller devices */
             .services-flex-row {
                 flex-direction: column;
                 gap: 30px;
@@ -914,7 +947,6 @@
                 max-width: 100%;
             }
 
-            /* FIXED: Badges stay inside the image on mobile */
             .services-ad-badge-1 {
                 right: 0;
             }
@@ -956,7 +988,6 @@
                 font-size: 32px;
             }
 
-            /* 2 columns, 2 rows for capsules on small devices */
             .services-list {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
@@ -1043,6 +1074,13 @@
                 padding: 10px 15px;
                 font-size: 13px;
             }
+
+            .update-notification {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -1101,9 +1139,7 @@
         </div>
     </section>
 
-    <!-- =========================================
-         SERVICES SECTION (COURSERA AD STYLE)
-    ========================================= -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="services">
         <div class="services-ad-container">
             <h2 class="services-ad-title">Our Services</h2>
@@ -1132,7 +1168,7 @@
                     </div>
                 </div>
 
-                <!-- Services titles list (8 items - 2 columns) - GREEN THEME CAPSULES -->
+                <!-- Services titles list (8 items - 2 columns) -->
                 <ul class="services-list">
                     <li>Landscaping</li>
                     <li>Garden Design</li>
@@ -1481,6 +1517,12 @@
         <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/mascot/ChatGPT%20Image%20Aug%2026,%202026,%2011_03_23%20PM.png" alt="Camalia Mascot" class="mascot-img">
     </div>
 
+    <!-- UPDATE NOTIFICATION -->
+    <div id="update-notification" class="update-notification">
+        <p>🔄 A new version of Camalia is available!</p>
+        <button id="update-btn" class="update-btn">Update</button>
+    </div>
+
     <!-- PWA INSTALL BUTTON -->
     <button id="install-btn" class="install-btn">📲 Install App</button>
 
@@ -1539,33 +1581,39 @@
         });
 
         // =========================================
-        // PWA INSTALL APP LOGIC (FIXED)
+        // PWA INSTALLATION - CLEAN VERSION
         // =========================================
         
         let deferredPrompt = null;
         const installBtn = document.getElementById('install-btn');
+        const updateNotification = document.getElementById('update-notification');
+        const updateBtn = document.getElementById('update-btn');
 
-        // Listen for the beforeinstallprompt event
+        // Listen for beforeinstallprompt
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
             installBtn.classList.add('show');
+            installBtn.textContent = '📲 Install Camalia App';
         });
 
-        // Hide the button if already installed or running standalone
+        // Handle app installed event
         window.addEventListener('appinstalled', () => {
             installBtn.classList.remove('show');
             deferredPrompt = null;
+            console.log('✅ Camalia app installed successfully!');
         });
 
-        // Check if already running in standalone mode
+        // Check if already in standalone mode
         if (window.matchMedia('(display-mode: standalone)').matches) {
             installBtn.classList.remove('show');
         }
 
-        // Check iOS devices (need to add to home screen manually)
+        // iOS detection and handling
         const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-        if (isIOS && !window.matchMedia('(display-mode: standalone)').matches) {
+        const isInStandalone = window.navigator.standalone === true;
+
+        if (isIOS && !isInStandalone) {
             installBtn.classList.add('show');
             installBtn.textContent = '📲 Add to Home Screen';
         }
@@ -1580,23 +1628,68 @@
                 }
                 deferredPrompt = null;
             } else if (isIOS) {
-                // iOS fallback - show instructions
-                alert('Tap the Share icon (□↑) in Safari, then tap "Add to Home Screen" to install the Camalia app.');
+                const shouldShowInstructions = confirm(
+                    '🌿 Add Camalia to your Home Screen:\n\n' +
+                    '1. Tap the Share icon (box with arrow) at the bottom\n' +
+                    '2. Scroll down and tap "Add to Home Screen"\n' +
+                    '3. Tap "Add" in the top-right corner\n\n' +
+                    'Would you like to see these instructions again later?'
+                );
+                if (!shouldShowInstructions) {
+                    installBtn.classList.remove('show');
+                }
+            } else {
+                alert('📲 To install this app, open this page in Chrome or Safari and look for the install option in your browser menu.');
             }
         });
 
-        // Register Service Worker (FIXED - uses external file, not blob)
+        // =========================================
+        // SERVICE WORKER REGISTRATION
+        // =========================================
+
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
+            window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
-                        console.log('ServiceWorker registered:', registration.scope);
+                        console.log('✅ Service Worker registered successfully:', registration);
+                        
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    updateNotification.classList.add('show');
+                                }
+                            });
+                        });
                     })
                     .catch(error => {
-                        console.log('ServiceWorker registration failed:', error);
+                        console.log('⚠️ Service Worker registration failed:', error);
                     });
             });
         }
+
+        // Update button handler
+        updateBtn.addEventListener('click', () => {
+            updateNotification.classList.remove('show');
+            if (navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage('skipWaiting');
+            }
+        });
+
+        // Check for service worker updates
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                refreshing = true;
+                window.location.reload();
+            }
+        });
+
+        console.log('✅ Camalia PWA initialized successfully!');
+        console.log('📱 To test PWA features:');
+        console.log('   - Chrome DevTools → Application → Manifest');
+        console.log('   - Chrome DevTools → Application → Service Workers');
+        console.log('   - Lighthouse → Generate PWA report');
     </script>
 </body>
 </html>
