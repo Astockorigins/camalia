@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
     
     <!-- PWA Manifest -->
-    <link rel="manifest" href='data:application/manifest+json,{"name":"Camalia Enterprise Ltd","short_name":"Camalia","start_url":".","display":"standalone","background_color":"#ffffff","theme_color":"#2e7d4a","icons":[{"src":"https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg","sizes":"192x192","type":"image/jpeg"},{"src":"https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg","sizes":"512x512","type":"image/jpeg"}]}'>
+    <link rel="manifest" href="/manifest.json">
 
     <!-- Importing a modern font (Inter) similar to DeepSeek -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1539,7 +1539,7 @@
         });
 
         // =========================================
-        // PWA INSTALL APP LOGIC
+        // PWA INSTALL APP LOGIC (FIXED)
         // =========================================
         
         let deferredPrompt = null;
@@ -1585,30 +1585,15 @@
             }
         });
 
-        // Register Service Worker for offline caching
+        // Register Service Worker (FIXED - uses external file, not blob)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                const swCode = `
-                    const CACHE_NAME = 'camalia-v1';
-                    const urlsToCache = ['/'];
-                    self.addEventListener('install', event => {
-                        event.waitUntil(
-                            caches.open(CACHE_NAME)
-                                .then(cache => cache.addAll(urlsToCache))
-                        );
-                    });
-                    self.addEventListener('fetch', event => {
-                        event.respondWith(
-                            caches.match(event.request)
-                                .then(response => response || fetch(event.request))
-                        );
-                    });
-                `;
-                const blob = new Blob([swCode], { type: 'application/javascript' });
-                const swUrl = URL.createObjectURL(blob);
-                navigator.serviceWorker.register(swUrl)
-                    .catch(() => {
-                        // Service worker registration is optional, ignore errors
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed:', error);
                     });
             });
         }
