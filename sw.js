@@ -1,9 +1,9 @@
 const CACHE_NAME = 'camalia-v2';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/offline.html',
-    '/manifest.json'
+    '/cam/',
+    '/cam/index.html',
+    '/cam/offline.html',
+    '/cam/manifest.json'
 ];
 
 // Install event - cache assets
@@ -51,7 +51,7 @@ self.addEventListener('fetch', event => {
                         return response;
                     })
                     .catch(() => {
-                        return caches.match('/offline.html');
+                        return caches.match('/cam/offline.html');
                     });
             })
     );
