@@ -3,18 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camalia Enterprise Ltd | Landscaping & Garden Design</title>
-    <meta name="description" content="Professional landscaping, garden design and maintenance services in Nairobi, Kenya.">
+    <title>Camalia Enterprise Ltd | Landscaping & Garden Design in Kenya</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Camalia Enterprise Ltd provides professional landscaping, garden design, landscape maintenance, hardscaping, softscaping, plant supply, swimming pool construction and cabro paving services in Kenya.">
+    <meta name="keywords" content="landscaping Kenya, landscaping Nairobi, garden design Nairobi, garden maintenance Kenya, landscaping contractors Kenya, swimming pool construction Kenya, cabro paving Kenya, Camalia Enterprise Ltd">
+    <meta name="author" content="Camalia Enterprise Ltd">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://astockorigins.github.io/camalia/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Camalia Enterprise Ltd | Landscaping & Garden Design in Kenya">
+    <meta property="og:description" content="Professional landscaping, garden design, maintenance, hardscaping, softscaping, plant supply, swimming pool construction and cabro paving services in Kenya.">
+    <meta property="og:url" content="https://astockorigins.github.io/camalia/">
+    <meta property="og:site_name" content="Camalia Enterprise Ltd">
+    <meta property="og:image" content="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+
+    <!-- Twitter/X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Camalia Enterprise Ltd | Landscaping & Garden Design in Kenya">
+    <meta name="twitter:description" content="Professional landscaping, garden design, maintenance, hardscaping, softscaping, plant supply, swimming pool construction and cabro paving services in Kenya.">
+    <meta name="twitter:image" content="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
+
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LandscapingBusiness",
+      "name": "Camalia Enterprise Ltd",
+      "description": "Professional landscaping, garden design, maintenance and outdoor construction services in Kenya.",
+      "url": "https://astockorigins.github.io/camalia/",
+      "telephone": "+254722734905",
+      "email": "camalia@camalia.info",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Kenya"
+        },
+        {
+          "@type": "Country",
+          "name": "Uganda"
+        }
+      ],
+      "serviceType": [
+        "Landscaping",
+        "Landscape Design",
+        "Garden Design",
+        "Landscape Maintenance",
+        "Hardscaping",
+        "Softscaping",
+        "Plant Supply",
+        "Swimming Pool Construction",
+        "Cabro Paving"
+      ]
+    }
+    </script>
+
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#2e7d4a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Camalia">
-    <link rel="apple-touch-icon" href="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/Logo/IMG-20260815-WA0001.jpg">
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- Favicon & Icons (NEW: pointing to local icons folder) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/camalia/icons/favicon-32.png">
+    <link rel="apple-touch-icon" href="/camalia/icons/icon-192.png">
+    
+    <!-- PWA Manifest (CORRECTED path) -->
+    <link rel="manifest" href="/camalia/manifest.json">
 
     <!-- Importing a modern font (Inter) similar to DeepSeek -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,7 +171,7 @@
             background: var(--ds-accent-hover);
         }
 
-        /* Hamburger Menu */
+        /* Hamburger Menu - FIXED: No background/box, only icon color changes */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -202,17 +259,22 @@
             display: flex;
         }
 
-        /* HERO */
+        /* HERO - The "DeepSeek" look */
         .hero {
             min-height: auto;
             display: flex;
             align-items: center;
+            
+            /* Wire-mesh grid background */
             background-color: #f8f9fa;
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
+            
             padding: 20px 0;
+            
+            /* FIXED: Added scroll-margin-top to account for sticky header */
             scroll-margin-top: 60px;
         }
 
@@ -292,15 +354,22 @@
             object-fit: cover;
         }
 
-        /* SERVICES SECTION */
+        /* =========================================
+           SERVICES SECTION (COURSERA AD STYLE)
+        ========================================= */
         .services {
             padding: 60px 0;
-            background-color: var(--ds-accent);
+            background-color: var(--ds-accent); /* GREEN Background */
+            
+            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
+            
+            /* FIXED: Prevents horizontal overflow */
             overflow: hidden;
+            
             color: white;
         }
 
@@ -308,6 +377,7 @@
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
+            /* FIXED: Prevents horizontal overflow on mobile */
             width: 100%;
             padding: 0 20px;
         }
@@ -319,6 +389,7 @@
             text-align: left;
         }
 
+        /* Flex layout for image + capsules on large screens */
         .services-flex-row {
             display: flex;
             align-items: center;
@@ -332,6 +403,7 @@
             max-width: 450px;
             flex-shrink: 0;
             margin: 0;
+            /* FIXED: Prevents image wrapper from overflowing */
             width: 100%;
         }
 
@@ -374,6 +446,7 @@
             transform: rotate(-5deg);
         }
 
+        /* Services titles list - CHANGED TO MATCH GREEN THEME */
         .services-list {
             list-style: none;
             padding: 0;
@@ -382,19 +455,20 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             flex: 1;
+            /* FIXED: Prevents capsules from overflowing */
             width: 100%;
             min-width: 0;
         }
 
         .services-list li {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15); /* CHANGED: Semi-transparent white */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* CHANGED: Subtle border */
             border-radius: 50px;
             padding: 12px 24px;
             font-size: 16px;
             font-weight: 600;
             text-align: center;
-            color: #ffffff;
+            color: #ffffff; /* CHANGED: White text for readability */
             word-break: break-word;
         }
 
@@ -414,10 +488,11 @@
             transform: translateY(-2px);
         }
 
-        /* PROJECTS */
+        /* PROJECTS - ADDED WIRE MESH BACKGROUND */
         .projects {
             padding: 100px 0;
             background-color: var(--ds-bg);
+            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
@@ -506,10 +581,11 @@
             margin-bottom: 20px;
         }
 
-        /* ABOUT */
+        /* ABOUT - ADDED WIRE MESH BACKGROUND */
         .about {
             padding: 90px 0;
             background-color: white;
+            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
@@ -572,6 +648,7 @@
             margin-bottom: 50px;
         }
 
+        /* RESTORED: Left border styling with green edge */
         .about-service-item {
             background: var(--ds-card-bg);
             padding: 25px;
@@ -673,11 +750,12 @@
             background: #f0f0f0;
         }
 
-        /* CONTACT */
+        /* CONTACT - ADDED WIRE MESH BACKGROUND */
         .contact {
             padding: 90px 0;
             text-align: center;
             background-color: white;
+            /* ADDED: Wire-mesh grid background */
             background-image: 
                 linear-gradient(rgba(46, 125, 74, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(46, 125, 74, 0.03) 1px, transparent 1px);
@@ -716,9 +794,9 @@
             color: white;
         }
 
-        /* FOOTER */
+        /* FOOTER - CHANGED TO BEAUTIFUL GREEN */
         footer {
-            background: #2e7d4a;
+            background: #2e7d4a; /* CHANGED: Beautiful Green */
             color: #ffffff;
             padding: 45px 0;
         }
@@ -818,64 +896,9 @@
             background: var(--ds-accent-hover);
         }
 
-        /* UPDATE NOTIFICATION */
-        .update-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #2e7d4a;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            z-index: 10001;
-            display: none;
-            align-items: center;
-            gap: 15px;
-            max-width: 350px;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .update-notification.show {
-            display: flex;
-        }
-
-        .update-notification p {
-            flex: 1;
-            font-size: 14px;
-            margin: 0;
-        }
-
-        .update-btn {
-            background: white;
-            color: #2e7d4a;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .update-btn:hover {
-            background: #f0f0f0;
-        }
-
         @keyframes slideIn {
             from {
                 transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
                 opacity: 0;
             }
             to {
@@ -912,7 +935,7 @@
             display: block;
         }
 
-        /* MOBILE RESPONSIVENESS */
+        /* MOBILE - RESTORED ORIGINAL RESPONSIVENESS */
         @media (max-width: 900px) {
             .hamburger {
                 display: flex;
@@ -938,6 +961,7 @@
                 height: 300px;
             }
 
+            /* Stack image above capsules on smaller devices */
             .services-flex-row {
                 flex-direction: column;
                 gap: 30px;
@@ -947,6 +971,7 @@
                 max-width: 100%;
             }
 
+            /* FIXED: Badges stay inside the image on mobile */
             .services-ad-badge-1 {
                 right: 0;
             }
@@ -988,6 +1013,7 @@
                 font-size: 32px;
             }
 
+            /* 2 columns, 2 rows for capsules on small devices */
             .services-list {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
@@ -1074,13 +1100,6 @@
                 padding: 10px 15px;
                 font-size: 13px;
             }
-
-            .update-notification {
-                top: 10px;
-                right: 10px;
-                left: 10px;
-                max-width: 100%;
-            }
         }
     </style>
 </head>
@@ -1139,7 +1158,9 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- =========================================
+         SERVICES SECTION (COURSERA AD STYLE)
+    ========================================= -->
     <section id="services" class="services">
         <div class="services-ad-container">
             <h2 class="services-ad-title">Our Services</h2>
@@ -1168,7 +1189,7 @@
                     </div>
                 </div>
 
-                <!-- Services titles list (8 items - 2 columns) -->
+                <!-- Services titles list (8 items - 2 columns) - GREEN THEME CAPSULES -->
                 <ul class="services-list">
                     <li>Landscaping</li>
                     <li>Garden Design</li>
@@ -1517,12 +1538,6 @@
         <img src="https://qnfkmsgqzocbiuwmibgq.supabase.co/storage/v1/object/public/plant-images/mascot/ChatGPT%20Image%20Aug%2026,%202026,%2011_03_23%20PM.png" alt="Camalia Mascot" class="mascot-img">
     </div>
 
-    <!-- UPDATE NOTIFICATION -->
-    <div id="update-notification" class="update-notification">
-        <p>🔄 A new version of Camalia is available!</p>
-        <button id="update-btn" class="update-btn">Update</button>
-    </div>
-
     <!-- PWA INSTALL BUTTON -->
     <button id="install-btn" class="install-btn">📲 Install App</button>
 
@@ -1581,39 +1596,33 @@
         });
 
         // =========================================
-        // PWA INSTALLATION - CLEAN VERSION
+        // PWA INSTALL APP LOGIC
         // =========================================
         
         let deferredPrompt = null;
         const installBtn = document.getElementById('install-btn');
-        const updateNotification = document.getElementById('update-notification');
-        const updateBtn = document.getElementById('update-btn');
 
-        // Listen for beforeinstallprompt
+        // Listen for the beforeinstallprompt event
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
             installBtn.classList.add('show');
-            installBtn.textContent = '📲 Install Camalia App';
         });
 
-        // Handle app installed event
+        // Hide the button if already installed or running standalone
         window.addEventListener('appinstalled', () => {
             installBtn.classList.remove('show');
             deferredPrompt = null;
-            console.log('✅ Camalia app installed successfully!');
         });
 
-        // Check if already in standalone mode
+        // Check if already running in standalone mode
         if (window.matchMedia('(display-mode: standalone)').matches) {
             installBtn.classList.remove('show');
         }
 
-        // iOS detection and handling
+        // Check iOS devices (need to add to home screen manually)
         const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-        const isInStandalone = window.navigator.standalone === true;
-
-        if (isIOS && !isInStandalone) {
+        if (isIOS && !window.matchMedia('(display-mode: standalone)').matches) {
             installBtn.classList.add('show');
             installBtn.textContent = '📲 Add to Home Screen';
         }
@@ -1628,68 +1637,38 @@
                 }
                 deferredPrompt = null;
             } else if (isIOS) {
-                const shouldShowInstructions = confirm(
-                    '🌿 Add Camalia to your Home Screen:\n\n' +
-                    '1. Tap the Share icon (box with arrow) at the bottom\n' +
-                    '2. Scroll down and tap "Add to Home Screen"\n' +
-                    '3. Tap "Add" in the top-right corner\n\n' +
-                    'Would you like to see these instructions again later?'
-                );
-                if (!shouldShowInstructions) {
-                    installBtn.classList.remove('show');
-                }
-            } else {
-                alert('📲 To install this app, open this page in Chrome or Safari and look for the install option in your browser menu.');
+                // iOS fallback - show instructions
+                alert('Tap the Share icon (□↑) in Safari, then tap "Add to Home Screen" to install the Camalia app.');
             }
         });
 
-        // =========================================
-        // SERVICE WORKER REGISTRATION
-        // =========================================
-
+        // Register Service Worker for offline caching
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('✅ Service Worker registered successfully:', registration);
-                        
-                        registration.addEventListener('updatefound', () => {
-                            const newWorker = registration.installing;
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    updateNotification.classList.add('show');
-                                }
-                            });
-                        });
-                    })
-                    .catch(error => {
-                        console.log('⚠️ Service Worker registration failed:', error);
+            window.addEventListener('load', function() {
+                const swCode = `
+                    const CACHE_NAME = 'camalia-v2';
+                    const urlsToCache = ['/camalia/'];
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.addAll(urlsToCache))
+                        );
+                    });
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => response || fetch(event.request))
+                        );
+                    });
+                `;
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                navigator.serviceWorker.register(swUrl)
+                    .catch(() => {
+                        // Service worker registration is optional, ignore errors
                     });
             });
         }
-
-        // Update button handler
-        updateBtn.addEventListener('click', () => {
-            updateNotification.classList.remove('show');
-            if (navigator.serviceWorker.controller) {
-                navigator.serviceWorker.controller.postMessage('skipWaiting');
-            }
-        });
-
-        // Check for service worker updates
-        let refreshing = false;
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (!refreshing) {
-                refreshing = true;
-                window.location.reload();
-            }
-        });
-
-        console.log('✅ Camalia PWA initialized successfully!');
-        console.log('📱 To test PWA features:');
-        console.log('   - Chrome DevTools → Application → Manifest');
-        console.log('   - Chrome DevTools → Application → Service Workers');
-        console.log('   - Lighthouse → Generate PWA report');
     </script>
 </body>
 </html>
