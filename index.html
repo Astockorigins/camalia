@@ -1544,6 +1544,9 @@
     <button id="install-btn" class="install-btn">📲 Install App</button>
 
     <script>
+        // DECLARE installBtn FIRST so it's available everywhere
+        const installBtn = document.getElementById('install-btn');
+
         // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1584,17 +1587,25 @@
         const mascotPopup = document.getElementById('camalia-mascot-popup');
         const closeMascotBtn = document.getElementById('close-mascot-popup');
 
+        // SHOW POPUP (and HIDE install button while popup is open)
         window.addEventListener('load', function() {
             if (!sessionStorage.getItem('camaliaPopupDismissed')) {
                 setTimeout(() => {
                     mascotPopup.classList.add('show');
+                    installBtn.classList.remove('show'); // HIDE install button
                 }, 2000);
             }
         });
 
+        // CLOSE POPUP (and SHOW install button again if applicable)
         closeMascotBtn.addEventListener('click', function() {
             mascotPopup.classList.remove('show');
             sessionStorage.setItem('camaliaPopupDismissed', 'true');
+            
+            // SHOW install button again if it should be available
+            if (deferredPrompt) {
+                installBtn.classList.add('show');
+            }
         });
 
         // =========================================
@@ -1602,7 +1613,6 @@
         // =========================================
         
         let deferredPrompt = null;
-        const installBtn = document.getElementById('install-btn');
 
         // Listen for the beforeinstallprompt event
         window.addEventListener('beforeinstallprompt', (e) => {
