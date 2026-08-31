@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astockorigins.github.io/camalia/sitemap.xml
