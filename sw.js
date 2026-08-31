@@ -1,4 +1,4 @@
-const CACHE_NAME = 'camalia-v2';
+const CACHE_NAME = 'camalia-v3';
 const urlsToCache = ['/camalia/'];
 
 self.addEventListener('install', event => {
@@ -13,14 +13,16 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
     event.respondWith(
-        caches.match(event.request)
+        fetch(event.request)
             .then(response => {
-                // Cache hit - return response
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request);
+                // If we got a response, save it to cache
+                const responseClone = response.clone();
+                caches.open(CACHE_NAME).then(cache => {
+                    cache.put(event.request, responseClone);
+                });
+                return response;
             })
+            .catch(() => caches.match(event.request))
     );
 });
 
