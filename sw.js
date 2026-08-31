@@ -1,5 +1,5 @@
-const CACHE_NAME = 'camalia-v1';
-const urlsToCache = ['/'];
+const CACHE_NAME = 'camalia-v2';
+const urlsToCache = ['/camalia/'];
 
 self.addEventListener('install', event => {
     event.waitUntil(
