@@ -1546,6 +1546,9 @@
     <script>
         // DECLARE installBtn FIRST so it's available everywhere
         const installBtn = document.getElementById('install-btn');
+        
+        // DECLARE deferredPrompt EARLY so the popup can access it
+        let deferredPrompt = null;
 
         // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
@@ -1611,8 +1614,6 @@
         // =========================================
         // PWA INSTALL APP LOGIC
         // =========================================
-        
-        let deferredPrompt = null;
 
         // Listen for the beforeinstallprompt event
         window.addEventListener('beforeinstallprompt', (e) => {
